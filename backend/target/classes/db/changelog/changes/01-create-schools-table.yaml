@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-schools-table
+      author: Kristina
+      changes:
+        - createTable:
+            tableName: schools
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: edrpou
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: region
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_active
+                  type: TINYINT(1)
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
